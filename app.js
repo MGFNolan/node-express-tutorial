@@ -1,13 +1,12 @@
-// CommonJS - every file in node is a module (by default)
-// Modules - encapsulated code (only share minimum/what we want)
-const names = require('./4-names')
-const sayHi = require('./5-utils')
-const data = require('./6-alternative-flavour')
+const path = require('path');
 
-// don't necessarily need to assign to a variable if it has a function
-// AS LONG as the function is called
-require('./7-mind-grenade')
+console.log(path.sep);
 
-// sayHi("Homer Simpson");
-// sayHi(names.person1);
-// sayHi(names.person2);
+const filePath = path.join('/content', '/subfolder', 'test.txt');
+console.log(filePath);
+
+const base = path.basename(filePath);
+console.log(base);
+
+const absolute = path.resolve(__dirname, 'content', 'subfolder', 'test.txt')
+console.log(absolute)
